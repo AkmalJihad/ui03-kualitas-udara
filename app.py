@@ -6,8 +6,8 @@ pickle_in = open(MODEL_FILE, 'rb')
 classifier = pickle.load(pickle_in)
 
 st.set_page_config(
-    page_title="Klasifikasi Kualitas Udara - Kelompok 7",
-    page_icon="7️⃣"
+    page_title="Indeks Standar Pencemar Udara",
+    page_icon="☁️"
 )
 
 st.title("Klasifikasi Kualitas Udara")
@@ -17,14 +17,29 @@ st.markdown("2. Husni Fadhilah Dhiya Ul Haq")
 st.markdown("3. Muhammad Hanief")
 
 st.write("Kualitas udara sekarang:")
-
 st.sidebar.markdown('## Atur Parameter Variabel')
-pm10 = st.sidebar.slider('pm10: Partikulat', 0, 150, 30) 
-pm25 = st.sidebar.slider('pm25: Partikulat', 0, 150, 48) 
-so2 = st.sidebar.slider('so2: Sulfida', 0, 150, 24)
-co = st.sidebar.slider('co: Carbon Monoksida', 0, 150, 4)
-o3 = st.sidebar.slider('o3: Ozon', 0, 150, 32)
-no2 = st.sidebar.slider('no2: Nitrogen dioksida', 0, 150, 7)
+
+col1, col2, col3 = st.columns(3)
+
+with col1:
+     pm10 = st.sidebar.slider('pm10: Partikulat', 0, 150, 30) 
+
+with col2:
+     pm25 = st.sidebar.slider('pm25: Partikulat', 0, 150, 48) 
+
+with col3:
+     so2 = st.sidebar.slider('so2: Sulfida', 0, 150, 24)
+        
+col4, col5, col6 = st.columns(3)
+
+with col4:
+     co = st.sidebar.slider('co: Carbon Monoksida', 0, 150, 4)
+
+with col5:
+     o3 = st.sidebar.slider('o3: Ozon', 0, 150, 32)
+
+with col6:
+     no2 = st.sidebar.slider('no2: Nitrogen dioksida', 0, 150, 7)
 
 prediction = classifier.predict([[pm10, pm25, so2, co, o3, no2]])
 if (prediction[0] == 0) :
