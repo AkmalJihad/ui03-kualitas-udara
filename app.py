@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 
-MODEL_FILE = "model.pkl" #Random Forest Classifier dengan akurasi 99%
+MODEL_FILE = "model.pkl"
 pickle_in = open(MODEL_FILE, 'rb')
 classifier = pickle.load(pickle_in)
 
@@ -10,7 +10,8 @@ st.set_page_config(
     page_icon="☁️"
 )
 
-st.title("Indeks Standar Pencemar Udara V0.1")
+st.title("Indeks Standar Pencemar Udara")
+st.caption("V0.1")
 
 st.subheader("Atur Parameter Variabel")
 
