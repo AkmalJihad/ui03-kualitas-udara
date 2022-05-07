@@ -11,8 +11,7 @@ st.set_page_config(
 )
 
 st.title("Indeks Standar Pencemar Udara")
-st.caption("Tugas Akhir UI-03")
-st.caption("Perhitungan ISPU melalui Machine Learning Random Forest Algorithm")
+st.caption("Tugas Akhir UI-03: Perhitungan ISPU melalui Machine Learning Random Forest Algorithm")
 
 st.subheader("Parameter")
 
