@@ -10,14 +10,10 @@ st.set_page_config(
     page_icon="☁️"
 )
 
-st.title("Klasifikasi Kualitas Udara")
-st.markdown('By kelompok 7:')
-st.markdown("1. Arya Pangestu")
-st.markdown("2. Husni Fadhilah Dhiya Ul Haq")
-st.markdown("3. Muhammad Hanief")
+st.title("Indeks Standar Pencemar Udara")
+st.caption("V0.1)
 
-st.write("Kualitas udara sekarang:")
-st.sidebar.markdown('## Atur Parameter Variabel')
+st.subheader("Atur Parameter Variabel")
 
 col1, col2, col3 = st.columns(3)
 
@@ -41,6 +37,7 @@ with col5:
 with col6:
      no2 = st.slider('no2: Nitrogen dioksida', 0, 150, 7)
 
+st.subheader("Kualitas udara sekarang:")
 prediction = classifier.predict([[pm10, pm25, so2, co, o3, no2]])
 if (prediction[0] == 0) :
     st.success("Baik")
