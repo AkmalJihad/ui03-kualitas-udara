@@ -1,7 +1,7 @@
 import streamlit as st
 import pickle
 
-MODEL_FILE = "modelKualitasUdaraRFC.pkl" #Random Forest Classifier dengan akurasi 99%
+MODEL_FILE = "model.pkl" #Random Forest Classifier dengan akurasi 99%
 pickle_in = open(MODEL_FILE, 'rb')
 classifier = pickle.load(pickle_in)
 
