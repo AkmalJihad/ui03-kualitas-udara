@@ -6,12 +6,12 @@ pickle_in = open(MODEL_FILE, 'rb')
 classifier = pickle.load(pickle_in)
 
 st.set_page_config(
-    page_title="ISPU",
+    page_title="Air Pollution Index",
     page_icon="☁️"
 )
 
-st.title("Indeks Standar Pencemar Udara")
-st.caption("Tugas Akhir UI-03: Perhitungan ISPU melalui Machine Learning Random Forest Algorithm")
+st.title("Air Pollution Index")
+st.caption("Final Project UI-03: Air Pollution Index Prediction using Random Forest Classifier")
 
 st.subheader("Parameter")
 
@@ -37,11 +37,11 @@ with col5:
 with col6:
      no2 = st.number_input('NO2', 0, 3000) 
 
-st.subheader("Kategori ISPU:")
+st.subheader("Category:")
 prediction = classifier.predict([[pm10, pm25, so2, co, o3, no2]])
 if (prediction[0] == 0) :
-    st.success("Baik")
+    st.success("Good")
 elif (prediction[0] == 1) :
-    st.success("Sedang")
+    st.success("Moderate")
 elif (prediction[0] == 2) :
-    st.success("Tidak Sehat")
+    st.success("Unhealthy")
