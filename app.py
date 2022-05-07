@@ -6,12 +6,11 @@ pickle_in = open(MODEL_FILE, 'rb')
 classifier = pickle.load(pickle_in)
 
 st.set_page_config(
-    page_title="Indeks Standar Pencemar Udara",
+    page_title="ISPU",
     page_icon="☁️"
 )
 
-st.title("Indeks Standar Pencemar Udara")
-st.caption("V0.1")
+st.title("Indeks Standar Pencemar Udara V0.1")
 
 st.subheader("Atur Parameter Variabel")
 
