@@ -18,24 +18,24 @@ st.subheader("Parameter")
 col1, col2, col3 = st.columns(3)
 
 with col1:
-     pm10 = st.number_input('PM10', 0, 150) 
+     pm10 = st.number_input('PM10', 0, 500) 
 
 with col2:
-     pm25 = st.number_input('PM2.5', 0, 150) 
+     pm25 = st.number_input('PM2.5', 0, 500) 
 
 with col3:
-     so2 = st.number_input('SO2', 0, 150) 
+     so2 = st.number_input('SO2', 0, 1200) 
         
 col4, col5, col6 = st.columns(3)
 
 with col4:
-     co = st.number_input('CO', 0, 150) 
+     co = st.number_input('CO', 0, 45000) 
 
 with col5:
-     o3 = st.number_input('O3', 0, 150) 
+     o3 = st.number_input('O3', 0, 1000) 
 
 with col6:
-     no2 = st.number_input('NO2', 0, 150) 
+     no2 = st.number_input('NO2', 0, 3000) 
 
 st.subheader("Kualitas udara sekarang:")
 prediction = classifier.predict([[pm10, pm25, so2, co, o3, no2]])
