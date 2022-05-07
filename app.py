@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 st.title("Indeks Standar Pencemar Udara")
-st.caption("V0.1)
+st.caption("V0.1")
 
 st.subheader("Atur Parameter Variabel")
 
