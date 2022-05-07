@@ -37,7 +37,7 @@ with col5:
 with col6:
      no2 = st.number_input('NO2', 0, 3000) 
 
-st.subheader("Kualitas udara sekarang:")
+st.subheader("Kategori ISPU:")
 prediction = classifier.predict([[pm10, pm25, so2, co, o3, no2]])
 if (prediction[0] == 0) :
     st.success("Baik")
